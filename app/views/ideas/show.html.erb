@@ -1,0 +1,25 @@
+
+
+
+<a href="/bright_ideas">Bright Ideas</a><br><br>
+
+
+<%= @idea.user.alias %> says:
+<div class= 'idea'>
+    <%=@idea.content%>
+</div>
+
+
+<h3>People who liked this post:</h3>
+<table class='table table-striped'>
+    <tr>
+        <th>Alias</th>
+        <th>Name</th>
+    </tr>
+    <% for user in @idea.user_liked.uniq %>
+    <tr>
+        <td> <%= user.alias %></td>
+        <td> <%= user.name %> </td>
+    </tr>
+    <% end %>
+</table>

@@ -1,0 +1,12 @@
+<a href="/bright_ideas">Bright Ideas</a>
+
+
+<h1>Name: <%=@user.name%></h1>
+
+<h2>Alias: <%=@user.alias%><br>
+Email: <%=@user.email%></h2>
+
+<hr>
+Total Number of Ideas: <%= Idea.where(user: @user.id).count %>
+<br>
+Total Number of Likes: <%= Like.where(user: @user.id).count %>

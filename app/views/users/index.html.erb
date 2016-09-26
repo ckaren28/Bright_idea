@@ -1,0 +1,41 @@
+<h1>Hi <%=@user.alias%>! </h1>
+
+<form action="/ideas" method="post">
+    <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+    <input type="text" name="content" placeholder="Post something witty here..." class='idea'>
+    <input type="submit" value="Idea!">
+</form>
+
+<hr>
+<% for idea in @ideas %>
+
+<div class= 'idea_list'>
+        <a href="/users/<%=idea.user.id%>"><%=idea.user.alias%> </a> : <%=idea.content%>
+
+             <% if idea.user == @user%>
+                <form action="/ideas/<%=idea.id%>" method="post">
+                  <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+                  <input name="_method" value="delete" type="hidden">
+                  <input type='submit' value= 'Delete'>
+                </form>
+              <% end %>
+
+        <% userlikes = idea.user_liked.to_a %>
+        <% if userlikes.include?(@user) == false %>
+            <form action='/likes' method='post'>
+              <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+              <input type='hidden' name='idea_id' value='<%= idea.id %>'>
+              <input type='submit' value='Like'>
+            </form>
+            <% elsif userlikes.include?(@user) == true %>
+            <form action='/likes/<%= idea.id %>' method='post'>
+                <input type='hidden' name='authenticity_token' value='<%= form_authenticity_token %>'>
+                <input type='hidden' name='_method' value='delete'>
+                <input type='submit' value='Unlike'>
+              </form>
+        <% end %>
+             <a href="/ideas/<%=idea.id%>">
+                 <%= Like.where(idea:idea.id).count %> people
+             </a> Like this. <br>
+</div>
+<% end %>

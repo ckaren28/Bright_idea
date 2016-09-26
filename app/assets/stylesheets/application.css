@@ -1,0 +1,28 @@
+.login, .register{
+    display: inline-block;
+    vertical-align: top;
+    border: 1px solid black;
+    width: 450px;
+    height: 550px;
+    margin: 5%;
+
+}
+
+*{
+    text-align: center;
+}
+.idea{
+    width: 40%;
+}
+.idea_list{
+    border: 1px solid black;
+    margin: 0 auto;
+    padding: 10px;
+    width: 50%;
+}
+.idea{
+    border: 1px solid black;
+    padding: 4px;
+    text-align: center;
+    margin: 0 auto;
+}
