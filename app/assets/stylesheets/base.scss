@@ -1,0 +1,60 @@
+body{
+  background: $bg;
+}
+
+
+input.form-control{
+  background: $bg;
+  border: none;
+  border-bottom: 2px solid $black;
+  text-align: center;
+  box-shadow: none;
+  padding: 12px 20px;
+  margin: 8px 0;
+}
+
+
+.btn{
+  background: $bg;
+  color: white;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+a{
+  color: black;
+  &:hover{
+    cursor: pointer;
+    transform: scale(1);
+
+  }
+}
+
+.LogginOUT{
+
+  button.logout{
+    padding-left: 90%;
+    background:$bg;
+    border: none;
+    &:hover{
+      color: navy;
+    }
+
+  }
+}
+a:visited{
+  color: #f19425;
+}
+
+.container{
+  margin-top: 5%;
+}
+
+.errors{
+  margin: 20px 50px;
+}
+
+placeholder{
+  color: white;
+}

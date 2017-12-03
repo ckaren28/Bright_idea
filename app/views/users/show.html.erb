@@ -1,12 +1,32 @@
-<a href="/bright_ideas">Bright Ideas</a>
+<div class="container userInfo">
+  <div class="row userRow">
 
+    <div class="col-xs-12">
 
-<h1>Name: <%=@user.name%></h1>
+      <a href="/bright_ideas" class="logolink">
+        <div class="logo2"> </div>
+      </a>
+    </div>
+  </div>
 
-<h2>Alias: <%=@user.alias%><br>
-Email: <%=@user.email%></h2>
+  <div class="row userRow">
 
-<hr>
-Total Number of Ideas: <%= Idea.where(user: @user.id).count %>
-<br>
-Total Number of Likes: <%= Like.where(user: @user.id).count %>
+  <div class="col-xs-12">
+    <h3>Alias: <%=@user.alias%><br>
+    Email: <%=@user.email%></h3>
+  </div>
+
+</div>
+  <div class="row userRow">
+
+    <div class="col-xs-12">
+      Total Number of Ideas: <%= Idea.where(user: @user.id).count %>
+      <br>
+      Total Number of Votes: <%= Like.where(user: @user.id).count %>
+    </div>
+
+    <button><a href="/bright_ideas"> Back </a></button>
+
+  </div>
+
+</div>

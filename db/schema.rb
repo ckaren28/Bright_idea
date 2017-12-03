@@ -31,7 +31,6 @@ ActiveRecord::Schema.define(version: 20160926182900) do
     t.integer  "idea_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "like_counter"
     t.integer  "likes_counter"
   end
 

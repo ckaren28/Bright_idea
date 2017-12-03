@@ -1,10 +1,10 @@
 class SessionsController < ApplicationController
   def new
       render :create
-  end 
+  end
 
   def create
-      user = User.find_by(email: params[:Email])
+      user = User.find_by(alias: params[:Alias])
 
         if user && user.authenticate(params[:Password])
           session[:user_id] = user.id

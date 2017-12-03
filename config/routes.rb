@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  
+  get '/' => 'sessions#new'
+
   # -- sessions ---
   get '/main' => 'sessions#new'
   get '/sessions/new'

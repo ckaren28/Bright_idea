@@ -1,3 +1,143 @@
-// Place all the styles related to the Ideas controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.home{
+  padding: 2%;
+
+  .logo{
+    background: url('logoTag.png');
+    background-repeat: no-repeat;
+    background-position: 35%;
+    background-size: contain;
+    width: 25vw;
+    height: 15vh;
+    min-width: 350px;
+    min-height: 100px;
+  }
+
+  .leftContent{
+    position: relative;
+
+
+    h1{
+      font-size: 1.3em;
+      font-family: $mainfont;
+      font-weight: 500;
+      padding-left: 5px;
+      margin-bottom: 20px;
+    }
+
+    form.PostIdea{
+      textarea.idea{
+        padding: 20px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: $white;
+        height: 40vh;
+        width: 99%;
+        // position: absolute;
+      }
+
+      button.submitIdea{
+        position: absolute;
+        bottom: -4%;
+        right: 10%;
+        text-align: center;
+        color: $black;
+        background: $bg;
+        font-size: 16px;
+        border: none;
+
+        &:hover{
+          background: $white;
+        }
+      }
+    }
+
+  }
+
+
+
+
+
+
+  .idea_list{
+    background: $white;
+    vertical-align: top;
+    padding: 20px;
+    max-height: 75vh;
+    overflow: scroll;
+
+    h1{
+      position: absolute;
+      top: -50px;
+      left: 0;
+      font-weight: 600;
+      background: $bg;
+      width: 100%;
+      margin-bottom:20px;
+      padding-left: 10px;
+      padding-bottom: 20px;
+      overflow: visible;
+    }
+
+    .posting{
+      border-bottom: $bg 1px solid;
+      width: 100%;
+      padding: 20px;
+      margin: 0;
+
+      button{
+        background: $white;
+        border: none !important;
+      }
+      .likeButton{
+        background: url('Vote.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 15px;
+        height: 15px;
+      }
+      .unlikeButton{
+        background: url('unvote.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 15px;
+        height: 15px;
+      }
+      .deleteButton{
+        background: url('trash.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 15px;
+        height: 15px;
+      }
+      form.like, form.unlike, form.delete{
+        display: inline-block;
+        margin-left: -10px;
+        margin-top: 5px;
+      }
+
+      .ideacontent{
+        padding: 15px 0px;
+        font-size: 16px;
+      }
+
+
+
+    }
+
+    &:last-child{
+      border-bottom: none;
+    }
+
+  }
+}
+
+
+.postingInfo{
+  margin-left: 60%;
+  padding-bottom: 10px;
+}
+
+
+.idea_list, .idea{
+  display: inline-block;
+}

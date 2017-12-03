@@ -1,25 +1,38 @@
+<div class="IdeaHighlight container-flex">
+  <div class="row ">
+    <div class="col-xs-12 col-sm-3">
+      <a href="/bright_ideas" class="logolink">
+        <div class="logo3"> </div>
+      </a>
+    </div> <!-- col-xs-12 -->
+    <div class="col-xs-12 col-sm-9">
+      <div class="highlightedIdea">
+        <%=@idea.content%>
+        <br />
+        <span>- <%= @idea.user.alias %></span>
 
+      </div>
+    </div> <!-- col-xs-12 -->
+    </div> <!--row -->
+    <div class="row">
+      <div class="col-xs-12 col-sm-3">
+        <div class="shownLikes">
+          <h3>People who voted on this idea:</h3>
+          <table class='table'>
+              <tr>
+                  <th>Username</th>
+                  <th>Name</th>
+              </tr>
+              <% for user in @idea.user_liked.uniq %>
+              <tr>
+                  <td> <%= user.alias %></td>
+                  <td> <%= user.name %> </td>
+              </tr>
+              <% end %>
+          </table>
+        </div>
+      </div>
+    </div><!--row-->
 
-
-<a href="/bright_ideas">Bright Ideas</a><br><br>
-
-
-<%= @idea.user.alias %> says:
-<div class= 'idea'>
-    <%=@idea.content%>
-</div>
-
-
-<h3>People who liked this post:</h3>
-<table class='table table-striped'>
-    <tr>
-        <th>Alias</th>
-        <th>Name</th>
-    </tr>
-    <% for user in @idea.user_liked.uniq %>
-    <tr>
-        <td> <%= user.alias %></td>
-        <td> <%= user.name %> </td>
-    </tr>
-    <% end %>
-</table>
+  <button><a href="/bright_ideas" class="backButton"> Back </a></button>
+</div> <!--container -->
