@@ -10,6 +10,17 @@
   form{
     width: 25vw;
     margin: 0 auto;
+    min-width: 320px;
+
+    button.lightup{
+      background: $bg;
+      color: $white;
+      border: none;
+        &:hover{
+          animation: lightup 1.5s ease-in-out infinite alternate;
+        }
+
+    }
   }
 }
 
@@ -22,4 +33,5 @@
   width: 100vw;
   height: 20vh;
   margin-top: 10%;
+
 }

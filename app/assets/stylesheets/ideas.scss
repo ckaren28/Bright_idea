@@ -1,10 +1,11 @@
 .home{
-  padding: 2%;
+  padding: 3%;
+  margin-top: -5%;
 
   .logo{
     background: url('logoTag.png');
     background-repeat: no-repeat;
-    background-position: 35%;
+    background-position: 25%;
     background-size: contain;
     width: 25vw;
     height: 15vh;
@@ -46,7 +47,8 @@
         border: none;
 
         &:hover{
-          background: $white;
+          animation: lightup 1.5s ease-in-out infinite alternate;
+
         }
       }
     }
@@ -54,29 +56,24 @@
   }
 
 
-
+h1.title{
+  margin-top:15vh;
+  margin-left: 15%;
+  // position: absolute;
+  // top: 25%;
+  // left: 25%
+}
 
 
 
   .idea_list{
+    margin-top: 2%;
     background: $white;
     vertical-align: top;
     padding: 20px;
-    max-height: 75vh;
+    max-height: 65vh;
     overflow: scroll;
 
-    h1{
-      position: absolute;
-      top: -50px;
-      left: 0;
-      font-weight: 600;
-      background: $bg;
-      width: 100%;
-      margin-bottom:20px;
-      padding-left: 10px;
-      padding-bottom: 20px;
-      overflow: visible;
-    }
 
     .posting{
       border-bottom: $bg 1px solid;
@@ -92,22 +89,25 @@
         background: url('Vote.png');
         background-repeat: no-repeat;
         background-size: cover;
-        width: 15px;
-        height: 15px;
+        width: 19px;
+        height: 19px;
+        &:hover{
+          animation: lightup 1.5s ease-in-out infinite alternate;
+        }
       }
       .unlikeButton{
         background: url('unvote.png');
         background-repeat: no-repeat;
         background-size: cover;
-        width: 15px;
-        height: 15px;
+        width: 19px;
+        height: 19px;
       }
       .deleteButton{
         background: url('trash.png');
         background-repeat: no-repeat;
         background-size: cover;
-        width: 15px;
-        height: 15px;
+        width: 19px;
+        height: 19px;
       }
       form.like, form.unlike, form.delete{
         display: inline-block;
@@ -140,4 +140,15 @@
 
 .idea_list, .idea{
   display: inline-block;
+}
+
+
+
+@keyframes lightup {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FFDD1B, 0 0 70px #FFDD1B, 0 0 80px #FFDD1B, 0 0 100px #FFDD1B, 0 0 150px #FFDD1B;
+  }
+  to {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+  }
 }

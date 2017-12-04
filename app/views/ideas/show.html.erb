@@ -21,12 +21,12 @@
           <table class='table'>
               <tr>
                   <th>Username</th>
-                  <th>Name</th>
+                  <th>Email</th>
               </tr>
               <% for user in @idea.user_liked.uniq %>
               <tr>
                   <td> <%= user.alias %></td>
-                  <td> <%= user.name %> </td>
+                  <td> <%= user.email %> </td>
               </tr>
               <% end %>
           </table>

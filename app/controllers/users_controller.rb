@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
   def index
+    if @user =session[:user_id]
       @user = User.find(session[:user_id])
       @ideas = Idea.all.order("likes_count DESC")
+    else
+      redirect_to '/login'
+    end
   end
 
   def create
